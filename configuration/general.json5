@@ -1,0 +1,33 @@
+{
+    config: {
+        activity: {
+            status: "dnd",
+            activity_type: "custom",
+            activity: ["📌 blacklotusassoc.org", "⚙️ Created by fiadh.fr"]
+        },
+    },
+    lang: {
+        success: {
+            banner: "<a:verified_white:1185134166187200542> **|** O banner foi atualizado com sucesso!",
+            avatar_success: "<a:verified_white:1185134166187200542> **|** O avatar foi atualizado com sucesso!",
+            restart: "<a:1792loading:1185130128070676530> **|** Reiniciando o app em 30 segundos...",
+            loading: "<a:1792loading:1185130128070676530> **|** O seu comando está sendo tratado, aguarde um pouco...",
+            paymentLoading: "<a:5564_Loading_Color:1185131962575364208> **|** A sua transação está sendo tratada, aguarde um pouco...",
+            uptime: "<a:verified_white:1185134166187200542> **|** O site está no ar há ***%days% dias, %hours% horas, %minutes% minutos e %seconds% segundos***.",
+            confirmation: "\u3164\n<:spammer:1182947668398440538> **|** %user%, você tem certeza de que deseja continuar?\n\u3164",
+            confirmation_success: "<:spammer:1182947668398440538> **|** Processo cancelado.",
+            ping: "### <a:verified_white:1185134166187200542> **|** Ponpong!\n\n<a:5564_Loading_Color:1185131962575364208> **|** **__App Latency:__** %bot_latency%ms\n<a:5564_Loading_Color:1185131962575364208> **|** **__WS Latency:__** %ws_latency%ms",
+        },
+        errors: {
+            idNotValid: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** O servidor escolhido não faz parte da associação.",
+            restart_running: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, o processo de reinício está atualmente ativo, tente novamente mais tarde.",
+            paymentFailed: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** A transação não foi aprovada. *Caso isso seja um erro, contacte o suporte!*",
+            owneronly_command: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, este comando só pode ser usado por um utilizador autorizado.",
+            no_permission_command: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, você não tem permissão para executar o comando **/%command%**!",
+            on_cooldown_command: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, você ainda está em cooldown por mais **%time%**",
+            no_permission_function: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, você não tem permissão para executar a função **'%function%**'",
+            on_cooldown_function: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, você ainda está em cooldown por mais **%time%**",
+            invalid_guild: "<:IconSystemMessageInteractionFail:1185134906305683516> **|** %user%, o comando **/%command%** não pode ser executado neste servidor.",
+        }
+    }
+}

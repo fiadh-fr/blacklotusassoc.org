@@ -1,0 +1,41 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const { SlashCommandBuilder } = require("discord.js");
+const CommandManager = require("../../../../main/modules/commands/manager.js");
+
+module.exports = class BotAvatarCommand extends CommandManager {
+  constructor(client) {
+    super(client, {
+      data: new SlashCommandBuilder()
+        .setName("app-avatar")
+        .setDescription("Mudar o avatar da app")
+        .addAttachmentOption(option => option
+          .setName('avatar')
+          .setDescription('Avatar a ser usado (.jpg, .png, .gif)')
+          .setRequired(true)),
+      category: "general",
+      plugin: "general",
+      global: false,
+      ownerOnly: true,
+      custom: null
+    });
+  }
+
+  async execute(interaction, lang) {
+    try {
+      await interaction.deferReply();
+
+      const avatar = interaction.options.getAttachment('avatar');
+      const p = this.client.configManager.get("general")
+
+      await this.client.user.setAvatar(avatar.url);
+      await interaction.editReply({ content: p.lang.success.avatar_success, ephemeral: true });
+      
+    } catch (error) {
+      this.client.utilManager.sendMessage(interaction, {
+        content: lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        ephemeral: true,
+      });
+      this.client.errorManager.errorReport(lang.unexpected_command_error.replace(/%command%/g, this.name), error);
+    }
+  }
+};

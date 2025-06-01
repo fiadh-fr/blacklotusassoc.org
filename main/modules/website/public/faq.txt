@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>The Black Lotus Assoc. | F.A.Q</title>
+  <meta name="description"
+    content="A The Black Lotus Assoc. é a maior associação lusófona no Discord que procura fornecer uma melhor experiência na plataforma, combinando experiência e ousadia." />
+  <meta name="keywords"
+    content="The Black Lotus Assoc. , associação, servidores, Discord, união, ajuda mútua, experiência, rede de servidores, alta qualidade, configurações de privacidade, gerenciamento de permissões, raids, nukes, hackers, bot próprio, parcerias, troca de experiências, segurança, networking, divulgação, crescimento, suporte, conhecimento, comunidade lusófona" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/footage/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/footage/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/footage/icons/favicon-16x16.png" />
+  <link rel="manifest" href="/footage/icons/site.webmanifest" />
+  <link rel="mask-icon" href="/footage/icons/safari-pinned-tab.svg" color="#7289da" />
+  <meta name="apple-mobile-web-app-title" content="Black L&oacute;tus" />
+  <meta name="application-name" content="Black L&oacute;tus" />
+  <meta name="msapplication-TileColor" content="#7289da" />
+  <meta name="theme-color" content="#f7f7f7" />
+  <!-- Twitter card & Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Black Lotus Assoc. | F.A.Q" />
+  <meta name="twitter:description"
+    content="A The Black Lotus Assoc. é a maior associação lusófona no Discord que procura fornecer uma melhor experiência na plataforma, combinando experiência e ousadia." />
+  <meta name="twitter:image" content="https://blacklotusassoc.org/footage/meta/blacklotus.jpg" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet"href="/css/fontawesome.min.css" />
+  <link rel="stylesheet"href="/css/main.css" />
+  <link rel="stylesheet"href="/css/custom.min.css" />
+</head>
+
+<body class="footer-dark">
+  <!-- Header -->
+  <header id="header" class="header-dynamic header-shadow-scroll">
+    <div class="container align-center">
+      <a href="/./">
+        <img src="/footage/logos/artwork_blackLotusLogo.svg" class="logo" alt="" />
+      </a>
+      <div class="navdiv">
+        <nav>
+          <ul class="nav-primary">
+            <li>
+              <a href="/association">Associação</a>
+            </li>
+            <li>
+              <a href="/syndicate">Black Syndicate</a>
+            </li>
+            <li>
+              <a href="/unit">Lotus UNIT</a>
+            </li>
+            <li>
+              <a href="/discovery">Discovery</a>
+            </li>
+          </ul>
+          <ul class="nav-secondary">
+            <li>
+              <a href="/contact">Entre em contacto <i class="fas fa-diagnoses icon-center"></i></a>
+            </li>
+            <li>
+              <a href="/faq">FAQ <i class="fas fa-atlas icon-center"></i></a>
+            </li>
+            <li>
+              <a href="/terms">Termos de Serviço <i class="fas fa-bookmark icon-center"></i></a>
+            </li>
+
+          </ul>
+          <div class="header-button-div">
+            <a class="button header-button" href="https://discord.gg/UK8g5HQs2K">
+              Faça parte</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Content -->
+  <section id="content">
+    <!-- Content Row -->
+    <section class="content-row content-row-color content-row-clouds content-row-half-height">
+      <div class="container">
+        <header class="content-header content-header-small content-header-uppercase">
+          <h1>FAQ</h1>
+          <p>
+            Antes de entrar em contacto com nosso suporte, dê uma olhada nas
+            perguntas frequentes
+          </p>
+        </header>
+        <div class="column-row align-center">
+          <div class="column-66">
+            <form class="form-full-width" method="get" action="faq">
+              <div class="form-row">
+                <input type="search" name="search" placeholder="O que quer saber?" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="column-row align-center">
+          <div class="column-50 text-align-center">
+            <p>
+              <small class="text-color-gray">Caso não encontre o que procura e continue precisando de
+                ajuda, não hesite em entrar em contacto:
+                <a href="mailto:support@theblacklotus.fr" style="color: #ffcc33">support@theblacklotus.fr</a></small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Row -->
+    <section class="content-row content-row-border-bottom">
+      <div class="container">
+        <div class="column-row">
+          <div class="column-50 content-sidebar-left">
+            <h3>Perguntas sobre a The Black Lotus Assoc. </h3>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>O que é a associação
+                The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                A associação The Black Lotusé uma central de ajuda e união
+                para donos de servidores do Discord de todos os tamanhos. Eles
+                oferecem recursos para ajudar a crescer os servidores e
+                enfrentar desafios.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Quais recursos são
+                oferecidos pela associação The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                Nós oferecemos tutorial de tudo que os servidores utilizam ou
+                queiram utilizar para treinar seus staffs de forma mais rápida
+                e menos cansativa, mais de 200 parcerias em menos de 5
+                minutos, eventos e ofertas entre servidores, guias para manter
+                o servidor seguro e prevenir golpes, constelações: uma forma
+                de organizar os servidores, facilitando a troca de membros
+                entre eles, aceleração do método para membros entrarem em seu
+                servidor de forma justa e correta, reporte e prevenção de
+                usuários que quebram os ToS (termos de serviço), recrutamento
+                e/ou busca por staffs de forma rápida, além de informações
+                sobre comportamento de pessoas que estiveram em staffs
+                anteriores.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Quais são as regras
+                da associação The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                As regras incluem respeito a todos os membros, manutenção da
+                confidencialidade das informações compartilhadas,
+                comportamento apropriado, não fazer propaganda de outras
+                associaçãos dentro da Black Lóts e participação ativa na
+                comunidade.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Há diretrizes para
+                participar da associação The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                Sim, antes de participar da associação, é necessário convidar
+                o bot para o seu servidor e digitar o comando
+                "/candidatar-se". Também é importante seguir as regras e
+                termos de uso da associação e da plataforma. (bla bla bla
+                completar futuramente)
+              </small>
+            </p>
+          </div>
+          <div class="column-50">
+            <h3>Perguntas sobre elegibilidade</h3>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Como faço para
+                participar da associação The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                Para participar, é necessário convidar o bot da associação
+                para o seu servidor e digitar o comando "/candidatar-se". (A
+                completar futuramente)
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Quantos membros
+                minimos meu servidor deve ter?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                É importante ter pelo menos 3000 membros no seu servidor para
+                ser elegível para se registrar.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>Posso fazer parte de
+                outra associação ao mesmo tempo que a The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a>
+                Não, a The Black Lotuspreza pela exclusividade em suas
+                associaçãos para garantir atenção e suporte dedicados aos seus
+                membros. Portanto, no momento, não é possível fazer parte de
+                outra associação além da The Black Lotus Assoc. . É necessário
+                escolher entre elas.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>É obrigatório seguir
+                o canal da embed da associação The Black Lotus Assoc. ?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a> Sim, é obrigatório
+                seguir o canal da embed para garantir que todos possam ser
+                divulgados corretamente.
+              </small>
+            </p>
+            <p>
+              <a style="text-decoration: underline"><i class="fas fa-question icon-left"></i>É obrigatório usar o
+                nome da associação The Black Lotusem meu status para promover
+                a comunidade?</a><br />
+              <small class="text-color-gray"><a class="far fa-comment icon-left"></a> É permitido e
+                encorajado utilizar sua posição na The Black Lotusou o 蓮 e
+                até mesmo o nome da associação em seu status ou "/about me"
+                para promover a associação, mas isso não é obrigatório.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Row -->
+    <section class="content-row content-row-gray">
+      <div class="container">
+        <header class="content-header">
+          <h2>O QUE OS NOSSOS MEMBROS DIZEM?</h2>
+          <p>
+            A associação oferece suporte e ajuda valiosa para seus membros,
+            incluindo dicas sobre segurança e networking, bem como estratégias
+            para aumentar o número de membros em seus servidores. O apoio da
+            associação mantém seus membros atualizados e seguros enquanto eles
+            compartilham suas paixões.
+          </p>
+        </header>
+        <div class="column-row align-center-bottom">
+          <div class="column-33">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                Desde que entrei na central da The Black Lotus Assoc. , adquiri
+                membros de forma rápida e simples com o sistema de parcerias
+                do bot. Além disso, os canais de apoio da central têm sido de
+                grande ajuda para administrar meu servidor.
+              </p>
+              <p class="testimonial-author">
+                <a href="https://discord.gg/coffeecat" target="_blank">
+                  <i class="fab fa-discord icon-left"></i>
+                  Sunny</a><br />
+                <small>Dona do servidor
+                  <a href="https://discord.gg/coffeecat" target="_blank">Kyoto Station</a></small>
+              </p>
+            </div>
+          </div>
+          <div class="column-33">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                Muito satisfeito com o suporte da central! É incrível ver a
+                colaboração de todos e a qualidade técnica que chamam atenção.
+                Eles fornecem interação, suporte, divulgação e conhecimento
+                valioso para comunidades grandes e pequenas, sempre buscando
+                melhorias.
+              </p>
+              <p class="testimonial-author">
+                <a href="https://discord.gg/sdRFj7n8uF" target="_blank">
+                  <i class="fab fa-discord icon-left"></i>
+                  Garrison</a><br />
+                <small>Dono do servidor
+                  <a href="https://discord.gg/GtGvdH7QuE" target="_blank">School of Yumaru</a></small>
+              </p>
+            </div>
+          </div>
+          <div class="column-33">
+            <div class="testimonial">
+              <p class="testimonial-content">
+                A The Black Lotusé minha primeira associação e não me
+                arrependo. Eles são acolhedores e fornecem dicas valiosas
+                sobre moderação e crescimento do servidor. As experiências e
+                aprendizados têm sido muito úteis para o meu servidor.
+              </p>
+              <p class="testimonial-author">
+                <a href="https://discord.gg/4gXcBBrpZj" target="_blank"><i
+                    class="fab fa-discord icon-left"></i>Theuu</a><br />
+                <small>Dono do servidor
+                  <a href="https://discord.gg/4gXcBBrpZj" target="_blank">Emphasis</a></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Row -->
+    <section class="content-row content-row-color">
+      <div class="container">
+        <header class="content-header">
+          <h1>
+            <mark>Quer saber mais?</mark>
+          </h1>
+          <p>
+            Aproveite a sua visita para nos conhecer melhor e saber mais sobre
+            o projeto que é a The Black Lotus Assoc. . Você terá a oportunidade de
+            explorar todos os aspectos do nosso projeto, desde a sua origem
+            até as iniciativas atuais. Descubra como estamos trabalhando para
+            transformar e deixar nossa marca na comunidade do Discord.
+            <br /><br />
+            <a class="button button-secondary" href="/about">
+              <i class="fas fa-arrow-alt-circle-right icon-left"></i>Sobre nós
+            </a>
+          </p>
+        </header>
+      </div>
+    </section>
+  </section>
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="footer-primary">
+      <div class="container">
+        <div class="column-row align-right-top">
+          <div class="column-25">
+            <h5>Connect</h5>
+            <ul class="list-style-icon">
+              <li>
+                <a href="https://discord.gg/UK8g5HQs2K" target="_blank"><i class="fab fa-discord"></i>Discord</a>
+              </li>
+              <li>
+                <a href="mailto:support@theblacklotus.fr"><i class="fas fa-envelope-open"></i>E-mail</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column-25">
+            <h5>About Us</h5>
+            <ul>
+              <li>
+                <a href="/contact">Nosso objetivo</a>
+              </li>
+              <li>
+                <a href="/about">Lotus Gear</a>
+              </li>
+              <li>
+                <a href="/contact">A história</a>
+              </li>
+              <li>
+                <a href="/contact">Legacy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column-25">
+            <h5>Explore</h5>
+            <ul>
+              <li>
+                <a href="/faq">F.A.Q</a>
+              </li>
+              <li>
+                <a href="/discovery">Servidores membros</a>
+              </li>
+              <li>
+                <a href="/404">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column-25">
+            <h5>Política</h5>
+            <ul>
+              <li>
+                <a href="terms#terms">Termos de Serviços</a>
+              </li>
+              <li>
+                <a href="terms#eligibility">Elegibilidade</a>
+              </li>
+              <li>
+                <a href="terms#general-rules">Regras de Conduta</a>
+              </li>
+              <li>
+                <a href="terms#privacy-policy">Privacidade</a>
+              </li>
+              <li>
+                <a href="terms#licenses">Licenças &amp; Créditos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column-25">
+            <h5>Projects</h5>
+            <ul>
+              <li>
+                <a href="/about">Associação</a>
+              </li>
+              <li>
+                <a href="/contact">Black Syndicate</a>
+              </li>
+              <li>
+                <a href="/contact">Lotus UNIT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-secondary">
+      <div class="container">
+        <p>
+          Copyright 2024 &copy; The Black Lotus Assoc. - All rights reserved.<br />
+          Powered by HTML<i class="fab fa-html5"></i>, developed by
+          <a href="https://fiadh.fr/" target="_blank" style="text-decoration: none">Fiadh</a>
+          - <i class="fab fa-css3-alt"> </i> <i class="fab fa-js"></i>
+        </p>
+      </div>
+    </section>
+  </footer>
+  <!-- Scripts -->
+  <script src="/js/right-click.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/js.cookie.min.js"></script>
+  <script src="/js/imagesloaded.min.js"></script>
+  <script src="/js/bricks.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

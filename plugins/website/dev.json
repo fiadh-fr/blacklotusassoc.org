@@ -1,0 +1,32 @@
+{
+    "name": "Website",
+    "author": "fiadh.fr",
+    "version": "1.0.0",
+    "requires_common_version": "1.0.0",
+    "configuration_files": {
+        "commands.json5": {
+            "name": "commands",
+            "path": "./plugins/website/data/configs"
+        },
+        "confirmation.json5": {
+            "name": "confirmation",
+            "path": "./plugins/website/data/configs"
+        },
+        "cooldown.json5": {
+            "name": "cooldown",
+            "path": "./plugins/website/data/configs"
+        },
+        "general.json5": {
+            "name": "general",
+            "path": "./plugins/website/data/configs"
+        },
+        "lang.json5": {
+            "name": "lang",
+            "path": "./plugins/website/data/configs"
+        },
+        "permission.json5": {
+            "name": "permission",
+            "path": "./plugins/website/data/configs"
+        }
+    }
+}

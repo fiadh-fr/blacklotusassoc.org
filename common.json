@@ -1,0 +1,15 @@
+{
+  "version": "3.0.0",
+  "debug": true,
+  "json5": true,
+  "console_logs_include_date": true,
+  "console_logs_to_file": true,
+  "console_logs_save_to_file_every": "48h",
+  "console_logs_create_new_file_after_restart": true,
+  "anti_crash_not_recommended": true,
+  "regenerate_config_on_load_error": false,
+  "auto_restart_every": "7d",
+  "server_name": "Central da The Black Lotus Assoc.",
+  "server_color": "#404eed",
+  "developer_mode": false
+}

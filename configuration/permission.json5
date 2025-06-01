@@ -1,0 +1,18 @@
+{
+  config: {
+    enabled: true,
+    roles: {
+      wardens: "1154853290224386079",
+      admins: "897108127768535051",
+      member: "896047806454837278",
+    },
+    general: {
+      stats: "manager",
+      ping: "member",
+      restart: "wardens",
+      uptime: "member",
+      highlight: "admins"
+    },
+  },
+  lang: {},
+}

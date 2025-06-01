@@ -1,0 +1,47 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  SlashCommandBuilder: v
+} = require("discord.js");
+const w = require("../../../../main/modules/commands/manager.js");
+module.exports = class x extends w {
+  constructor(d) {
+    const H = {
+      d: 0xbc,
+      e: 0xc1
+    };
+    super(d, {
+      "data": new v().setName("ping").setDescription("Latência do site"),
+      "category": "geral",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null
+    });
+  }
+  async ["execute"](d, e) {
+    const I = {
+      d: 0xae,
+      e: 0xcd,
+      f: 0xac,
+      g: 0xbf,
+      h: 0xc4,
+      i: 0xd1,
+      j: 0xbe,
+      k: 0xd6,
+      l: 0xc5,
+      m: 0xda,
+      n: 0xab
+    };
+    try {
+      this.client.utilManager.sendMessage(d, {
+        "content": this.client.configManager.get("general").lang.success.ping.replace(/%bot_latency%/g, (Date.now() - d.createdTimestamp).toFixed(1)).replace(/%ws_latency%/g, this.client.ws.ping)
+      });
+    } catch (f) {
+        this.client.utilManager.sendMessage(d,{
+        "content": e.lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), f);
+    }
+  }
+};

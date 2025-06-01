@@ -1,0 +1,91 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  SlashCommandBuilder: B
+} = require("discord.js");
+const C = require("../../../../main/modules/commands/manager.js");
+module.exports = class D extends C {
+  constructor(d) {
+    const N = {
+      d: 0x15d,
+      e: 0x150,
+      f: 0x13f
+    };
+    super(d, {
+      "data": new B().setName("review").setDescription("Deixar um review no site").addSubcommand(e => e.setName("new").setDescription("Adicionar um review no site").addStringOption(e => e.setName("review").setDescription("Adicione um review no site"))).addSubcommand(e => e.setName("edit").setDescription("Editar seu review no site").addStringOption(e => e.setName("review").setDescription("Edite o seu review no site"))).addSubcommand(e => e.setName("remove").setDescription("Remova o seu review no site")),
+      "category": "geral",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null
+    });
+  }
+  async ["execute"](d, e) {
+    const O = {
+      d: 0x148,
+      e: 0x149,
+      f: 0x13d,
+      g: 0x14c,
+      h: 0x151,
+      i: 0x14a,
+      j: 0x163,
+      k: 0x148,
+      l: 0x15e,
+      m: 0x15e,
+      n: 0x15a,
+      o: 0x14e,
+      p: 0x15c,
+      q: 0x161
+    };
+    try {
+      const reviewModel = this.client.getModels("reviewsDataDB");
+      await this.client.utilManager.loadingDefer(d);
+
+      switch (d.options.getSubcommand()) {
+        case "new":
+          {
+            const review = d.options.getString('review');
+
+            console.log(d.user)
+
+            const db = new reviewModel({
+              ownerID: d.user.id,
+              ownerNick: d.user.username,
+              serverID: "String",
+              ServerName: "String",
+              invite: "Number",
+              review: review,
+              approved: false,
+            });
+            await db.save();
+            this.client.utilManager.editCustomDefer(d, {
+              "content": `Case NEW ${review}`
+            });
+            console.log(1)
+            break;
+          }
+        case "edit":
+          {
+            this.client.utilManager.editCustomDefer(d, {
+              "content": "Case EDIT"
+            });
+            console.log(2)
+            break;
+          }
+        case "remove":
+          {
+            this.client.utilManager.editCustomDefer(d, {
+              "content": "Case REMOVE"
+            });
+            console.log(3)
+            break;
+          }
+      }
+    } catch (f) {
+      this.client.utilManager.editCustomDefer(d, {
+        "content": e.lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), f);
+    }
+  }
+};

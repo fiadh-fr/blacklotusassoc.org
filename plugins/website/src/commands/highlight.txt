@@ -1,0 +1,137 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  SlashCommandBuilder: j,
+  userMention: k,
+} = require("discord.js");
+const axios = require('axios');
+const l = require("../../../../main/modules/commands/manager.js");
+
+module.exports = class m extends l {
+  constructor(d) {
+    const A = {
+      a: 0x107,
+      b: 0x101,
+      c: 0x118,
+      d: 0x103,
+      e: 0x12b,
+    };
+    super(d, {
+      "data": new j().setName("highlight").setDescription("Comprar um highlight de seu servidor por 30d").addStringOption(option => option.setName("serverid").setDescription("ID do Servidor").setRequired(true)),
+      "category": "geral",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null,
+    });
+  }
+  async ["execute"](d, e) {
+    const B = {
+      g: 0xed,
+      h: 0xfd,
+      i: 0xf7,
+      j: 0xed,
+      k: 0xed,
+      l: 0x131,
+      m: 0xfa,
+      n: 0x114,
+      o: 0xe9,
+    };
+    try {
+      await this.client.utilManager.loadingDefer(d);
+
+      const h = this.client.configManager.get("general");
+
+      const serverID = d.options.getString("serverid");
+      const GuildData = await this.client.getModels("guildsDataDB")
+      const guildVerification = await GuildData.findOne({ id: serverID });
+      if (guildVerification) {
+        const initialUrl = `https://api.loritta.website/v1/guilds/896047806454837278/channels/${d.channelId}/sonhos/sonhos-request`;
+
+
+        const data = {
+          senderId: d.user.id,
+          quantity: 10000000,
+          reason: "Pagamento Highlight Site TBLA",
+          expiresAfterMillis: 60000
+        };
+
+        const headers = {
+          Authorization: "lorixb_CPdmitWWQbLty6jzSrYeHDsGjtz7DySmiqYkK7TKai8d"
+        };
+
+        try {
+
+          this.client.utilManager.editCustomDefer(d, {
+            "content": `<a:5564_Loading_Color:1185131962575364208> **|** ${k(d.user.id)}, a sua transação precisa ser aprovada antes de prosseguir. Após concluir a transação, aguarde até o término da contagem regressiva.`
+          });
+          const response = await axios.post(initialUrl, data, { headers });
+          await new Promise(resolve => setTimeout(resolve, 60000));
+
+          const transactionID = response.data.sonhosTransferRequestId;
+
+          const transactionUrl = `https://api.loritta.website/v1/sonhos/sonhos-transfer/${transactionID}`;
+
+          const transactionResponse = await axios.get(transactionUrl, { headers });
+          const transactionData = transactionResponse.data;
+
+          if (transactionData.transferredAt) {
+            const guildData = await GuildData.findOne({ id: serverID }, { "highlighted1.until": 1, "currentName": 1 });
+
+            const serverName = guildData?.currentName || "Servidor Desconhecido";
+            const currentUntil = guildData?.highlighted1?.until
+              ? new Date(guildData.highlighted1.until)
+              : new Date();
+
+            const newUntil = new Date(currentUntil);
+            newUntil.setDate(currentUntil.getDate() + 30);
+
+            await GuildData.updateOne(
+              { id: serverID },
+              {
+                $set: {
+                  "highlighted1.value": true,
+                  "highlighted1.until": newUntil
+                }
+              }
+            );
+
+            const discordTimestamp = Math.floor(newUntil.getTime() / 1000);
+
+            this.client.utilManager.editCustomDefer(d, {
+              "content": `<a:verified_white:1185134166187200542> **|** ${k(d.user.id)}, a transação foi aprovada com sucesso!`
+            });
+
+            this.client.utilManager.sendMessageFollowUp(d, {
+              "content": `<a:verified_white:1185134166187200542> **|** ${k(d.user.id)}, sua transação foi aprovada. O servidor "${serverName}" estará em destaque no site (https://blacklotusassoc.org) até o dia <t:${discordTimestamp}:D>.`
+            });
+          } else {
+            this.client.utilManager.editCustomDefer(d, {
+              "content": h.lang.success.paymentFailed
+            });
+          }
+        } catch (error) {
+          if (error.response?.data?.message === "Sender does not have enough sonhos!") {
+            this.client.utilManager.editCustomDefer(d, {
+              "content": `<:IconSystemMessageInteractionFail:1185134906305683516> **|** ${k(d.user.id)}, você não tem créditos suficientes para realizar essa transação!`
+            });
+          } else {
+            this.client.utilManager.editCustomDefer(d, {
+              "content": `<:IconSystemMessageInteractionFail:1185134906305683516> **|** ${k(d.user.id)}, ocorreu um erro na tentativa de comunicação com a API da Loritta. Tente novamente mais tarde!`
+            });
+          }
+        }
+      } else {
+        this.client.utilManager.editCustomDefer(d, {
+          "content": h.lang.errors.idNotValid
+        });
+      }
+
+    } catch (n) {
+      this.client.utilManager.editCustomDefer(d, {
+        "content": e.lang.unexpected_command_error.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), n);
+    }
+  }
+};

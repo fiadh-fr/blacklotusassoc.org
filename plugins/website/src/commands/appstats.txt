@@ -1,0 +1,122 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  EmbedBuilder,
+  SlashCommandBuilder: F,
+  version: G
+} = require("discord.js");
+const H = require("../../../../main/modules/commands/manager.js");
+const {
+  totalmem: I
+} = require("os");
+module.exports = class J extends H {
+  constructor(d) {
+    const V = {
+      d: 0x17c,
+      e: 0x163
+    };
+    super(d, {
+      "data": new F().setName("stats").setDescription("Informações específicas sobre o site"),
+      "category": "geral",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null
+    });
+  }
+  async ["execute"](d, e) {
+    const X = {
+      d: 0x135,
+      e: 0x133,
+      f: 0x133,
+      g: 0x159,
+      h: 0x11d,
+      i: 0x192,
+      j: 0x164,
+      k: 0x156,
+      l: 0x145,
+      m: 0x189,
+      n: 0x149,
+      o: 0x120,
+      p: 0x11c,
+      q: 0x140,
+      r: 0x13d,
+      s: 0x173,
+      t: 0x183,
+      u: 0x174,
+      v: 0x193,
+      w: 0x14a,
+      x: 0x191,
+      y: 0x14c,
+      z: 0x155,
+      A: 0x17e,
+      B: 0x13a,
+      C: 0x146,
+      D: 0x188,
+      E: 0x168,
+      Y: 0x17a,
+      Z: 0x117,
+      a0: 0x162,
+      a1: 0x126,
+      a2: 0x182,
+      a3: 0x159,
+      a4: 0x153,
+      a5: 0x159,
+      a6: 0x150,
+      a7: 0x124,
+      a8: 0x15d,
+      a9: 0x147,
+      aa: 0x12e,
+      ab: 0x12b,
+      ac: 0x143,
+      ad: 0x175,
+      ae: 0x152,
+      af: 0x144,
+      ag: 0x180,
+      ah: 0x119,
+      ai: 0x14d,
+      aj: 0x18d,
+      ak: 0x18e
+    };
+    const W = {
+      d: 0x159,
+      e: 0x18b,
+      f: 0x17b,
+      g: 0x165,
+      h: 0x186,
+      i: 0x181,
+      j: 0x173,
+      k: 0x15b,
+      l: 0x179,
+      m: 0x141,
+      n: 0x18e,
+      o: 0x11a
+    };
+    try {
+      const f = this.client.pluginLoader.getLoadedPlugins(true).map(j => {
+        if (this.client.pluginLoader.verifiedPlugins.includes(j.name)) {
+          return "<a:1_verified:1182382104437346316> **|** **__" + j.name + ":__** **v" + j.version + "** by *" + j.author + "*";
+        }
+        return "<a:1_possibleshutdown:1182382114046488628> **|** **__" + j.name + "__:** **v" + j.version + "** by *" + j.author + "*";
+      }).sort().join("\n");
+      const g = (process.memoryUsage().heapUsed / 1048576).toFixed(0);
+      const h = (I() / 1048576).toFixed(0);
+      const langFile = this.client.configManager.get("lang");
+      const i = new EmbedBuilder()
+        .setColor(0x404eed)
+        .setFooter({
+          "text": '' + langFile.lang.embed_footer.replace(/%guild%/g, this.client.commonConfig.get().server_name)
+        })
+        .setDescription("## App Statistics:\n<a:1_possibleshutdown:1182382114046488628> **|** **Discord.js:** *" + G + "*\n<a:1_possibleshutdown:1182382114046488628> **|** **Node.js:** *" + process.version + "*\n<a:1_possibleshutdown:1182382114046488628> **|** **Memory Usage:** *" + g + " / " + h + " MB (" + (g / h * 100).toFixed(2) + "%)*\n<a:1_possibleshutdown:1182382114046488628> **|** **Commands loaded:** *" + this.client.commandLoader.commandsLoaded + "*\n<a:1_possibleshutdown:1182382114046488628> **|** **Events loaded:** *" + this.client.eventLoader.eventsLoaded + "*\n## Modules Loaded:\n" + f + "\n");
+      this.client.utilManager.sendMessage(d, {
+        "embeds": [i]
+      });
+
+    } catch (j) {
+      this.client.utilManager.sendMessage(d, {
+        "content": e.lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), j);
+    }
+  }
+};

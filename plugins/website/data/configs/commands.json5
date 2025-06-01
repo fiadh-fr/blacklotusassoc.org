@@ -1,0 +1,11 @@
+{
+  config: {
+    general: {
+        stats: false,
+        ping: false,
+        restart: false,
+        uptime: false,
+     },
+    },
+  lang: {},
+}

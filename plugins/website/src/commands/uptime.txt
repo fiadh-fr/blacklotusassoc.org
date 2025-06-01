@@ -1,0 +1,51 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  SlashCommandBuilder: B
+} = require("discord.js");
+const C = require("../../../../main/modules/commands/manager.js");
+module.exports = class D extends C {
+  constructor(d) {
+    const N = {
+      d: 0x15d,
+      e: 0x150,
+      f: 0x13f
+    };
+    super(d, {
+      "data": new B().setName("uptime").setDescription("Tempo que o site está ligado"),
+      "category": "geral",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null
+    });
+  }
+  async ["execute"](d, e) {
+    const O = {
+      d: 0x148,
+      e: 0x149,
+      f: 0x13d,
+      g: 0x14c,
+      h: 0x151,
+      i: 0x14a,
+      j: 0x163,
+      k: 0x148,
+      l: 0x15e,
+      m: 0x15e,
+      n: 0x15a,
+      o: 0x14e,
+      p: 0x15c,
+      q: 0x161
+    };
+    try {
+      this.client.utilManager.sendMessage(d, {
+        "content": (false, this.client.configManager.get("general").lang.success.uptime.replace(/%days%/g, Math.floor(this.client.uptime / 86400000)).replace(/%hours%/g, Math.floor(this.client.uptime / 3600000) % 24).replace(/%minutes%/g, Math.floor(this.client.uptime / 60000) % 60).replace(/%seconds%/g, Math.floor(this.client.uptime / 1000) % 60))
+      });
+    } catch (f) {
+      this.client.utilManager.sendMessage(d, {
+        "content": e.lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), f);
+    }
+  }
+};

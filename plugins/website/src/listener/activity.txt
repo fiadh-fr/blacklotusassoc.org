@@ -1,0 +1,150 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const u = require("../../../../main/modules/listener/manager.js");
+const {
+  ActivityType: v,
+  PresenceUpdateStatus: w
+} = require("discord.js");
+module.exports = class x extends u {
+  constructor(d) {
+    const L = {
+      d: 0xee,
+      e: 0xd8,
+      f: 0xc8,
+      g: 0x10a,
+      h: 0xf4
+    };
+    super(d, {
+      "listener": "botActivity",
+      "duration": 5000,
+      "nextRun": Date.now() + 5000,
+      "disabled": false
+    });
+    this.statusSet = false;
+    this.activity_type = null;
+    this.activityIndex = 0;
+  }
+  async ["execute"]() {
+    const M = {
+      d: 0xe3,
+      e: 0xc8,
+      f: 0xfe,
+      g: 0x11c,
+      h: 0xc9,
+      i: 0xd1,
+      j: 0xeb,
+      k: 0xd5,
+      l: 0xf0,
+      m: 0xe4,
+      n: 0xdd,
+      o: 0xc9,
+      p: 0xf5,
+      q: 0xfb,
+      r: 0xf4,
+      s: 0xcc,
+      t: 0xf4,
+      N: 0xf4,
+      O: 0xec,
+      P: 0x115,
+      Q: 0xc3,
+      R: 0xe8,
+      S: 0xea,
+      T: 0xe9,
+      U: 0xf9,
+      V: 0xfa,
+      W: 0xea,
+      X: 0x116,
+      Y: 0xda,
+      Z: 0xc5,
+      a0: 0xed,
+      a1: 0xfe,
+      a2: 0x11c,
+      a3: 0xff,
+      a4: 0x100
+    };
+    try {
+      const d = this.client.configManager.get("general");
+      if (!this.statusSet) {
+        switch (d.config.activity.status) {
+          case "online":
+            {
+              await this.client.user.setStatus(w.Online);
+              break;
+            }
+          case "dnd":
+            {
+              await this.client.user.setStatus(w.DoNotDisturb);
+              break;
+            }
+          case "idle":
+            {
+              await this.client.user.setStatus(w.Idle);
+              break;
+            }
+          case "offline":
+            {
+              await this.client.user.setStatus(w.Invisible);
+              break;
+            }
+        }
+        this.statusSet = true;
+      }
+      if (d.config.activity.activity.length > 0) {
+        if (this.activity_type == null) {
+          this.activity_type = this.resolveActivityType(d);
+        }
+        if (!this.resolvePlaceholder) {
+          this.client.user.setActivity('' + (await this.resolvePlaceholder(d.config.activity.activity[this.activityIndex])), {
+            "type": this.activity_type
+          });
+        } else {
+          this.client.user.setActivity('' + d.config.activity.activity[this.activityIndex], {
+            "type": this.activity_type
+          });
+        }
+        this.activityIndex++;
+        if (this.activityIndex >= d.config.activity.activity.length) {
+          this.activityIndex = 0;
+        }
+        return;
+      }
+      this.client.user.setActivity("/help", {
+        "type": v.Watching
+      });
+    } catch (e) {
+      this.client.consoleManager.log("An internal error occured while updating the bot's activity list.", 5);
+      this.client.consoleManager.log("Please make sure \"config.activity\" is validated in the configuration section (general.json).", 5);
+      if (this.client.commonConfig.get().debug) {
+        this.client.consoleManager.log(e, 5);
+      }
+    }
+  }
+  ["resolveActivityType"](d) {
+    const N = {
+      d: 0xc7,
+      e: 0xec,
+      f: 0xcc,
+      g: 0x10d,
+      h: 0xf8,
+      i: 0xd2,
+      j: 0x10c,
+      k: 0xfd
+    };
+    switch (d.config.activity.activity_type) {
+      case "competing":
+        return v.Competing;
+      case "listening":
+        return v.Listening;
+      case "playing":
+        return v.Playing;
+      case "streaming":
+        return v.Streaming;
+      case "watching":
+        return v.Watching;
+      case "custom":
+        return v.Custom;
+    }
+  }
+  async ["resolvePlaceholder"](d) {
+    return '';
+  }
+};

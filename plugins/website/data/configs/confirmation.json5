@@ -1,0 +1,12 @@
+{
+    config: {
+        enabled: false,
+        timeout_in_seconds: 30,
+        commands_require_confirmation: [
+            "restart",
+        ],
+        interaction_require_confirmation: [
+        ]
+    },
+    lang: {}
+}

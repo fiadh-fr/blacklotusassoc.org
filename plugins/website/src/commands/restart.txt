@@ -1,0 +1,51 @@
+// This part was used to login with Discord App, but as I've quit using Discord there's no need for it anymore.
+const {
+  SlashCommandBuilder: p
+} = require("discord.js");
+const q = require("../../../../main/modules/commands/manager.js");
+module.exports = class r extends q {
+  constructor(d) {
+    const B = {
+      d: 0x102,
+      e: 0x104,
+      f: 0x112
+    };
+    super(d, {
+      "data": new p().setName("restart").setDescription("Reiniciar o site"),
+      "category": "administração",
+      "plugin": "general",
+      "global": false,
+      "ownerOnly": false,
+      "custom": null
+    });
+  }
+  async ["execute"](d, e) {
+    const C = {
+      d: 0xf4,
+      e: 0x106,
+      f: 0xff,
+      g: 0xfe,
+      h: 0x114,
+      i: 0x109,
+      j: 0x104,
+      k: 0x103,
+      l: 0x110,
+      m: 0x11c,
+      n: 0x119,
+      o: 0xfc
+    };
+    try {
+      this.client.utilManager.sendMessage(d, {
+        "content": (false, this.client.configManager.get("general").lang.success.restart),
+        "ephemeral": true,
+      });
+      this.client.utilManager.restartSystem();
+    } catch (f) {
+      this.client.utilManager.sendMessage(d,{
+        "content": e.lang.unexpected_command_error_icon.replace(/%command%/g, this.name),
+        "ephemeral": true,
+      });
+      this.client.errorManager.errorReport(e.lang.unexpected_command_error.replace(/%command%/g, this.name), f);
+    }
+  }
+};

@@ -1,0 +1,8 @@
+ATENÇÃO:
+Há um bug crítico nesta antiga versão do projeto, onde uma vulnerabilidade ainda está presente!
+
+Risco de HTML Injection:
+Se um usuário mal-intencionado inserir um script JavaScript no texto de parceria do bot da Black, o script será executado, expondo o sistema a riscos graves.
+
+Ação necessária:
+Corrigir essa falha imediatamente!

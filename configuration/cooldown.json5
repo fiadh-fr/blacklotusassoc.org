@@ -1,0 +1,17 @@
+{
+  config: {
+    enabled: true,
+    default: "1s",
+    role_bypass: {
+      enabled: false,
+      role_id: "",
+    },
+    general: {
+      stats: "default",
+      ping: "default",
+      restart: "5m",
+      uptime: "default",
+    }
+  },
+  lang: {},
+}
